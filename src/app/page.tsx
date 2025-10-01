@@ -1,11 +1,57 @@
+"use client";
+
 import Image from "next/image";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/ui/theme-toggle";
+import { IconPlus, IconLibraryPlus } from "@tabler/icons-react";
+import { Loader2Icon } from "lucide-react";
+import PieceForm from "@/components/piece-form";
+import ResultCard from "@/components/result-card";
+import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
+  const isLoading = false;
+
+  const [result, setResult] = useState<{
+    price: string;
+    justification: string;
+  } | null>(null);
+
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Button>Button</Button>
+      <main className="flex  flex-col gap-5 row-start-2 items-center sm:items-start">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">Garimpo.AI</h1>
+          <p className="text-gray-600 max-w-md">
+            Preços inteligentes para roupas de brechó. Escolha um modo abaixo
+            para começar.
+          </p>
+        </div>
+
+        <div className="flex justify-center gap-6">
+          <Link href="/unique">
+            <Button className="text-lg px-8 py-6">
+              {isLoading ? (
+                <Loader2Icon className="animate-spin" />
+              ) : (
+                <IconPlus />
+              )}
+              Peça única
+            </Button>
+          </Link>
+
+          <Link href="/batch">
+            <Button variant="outline" className="text-lg px-8 py-6">
+              {isLoading ? (
+                <Loader2Icon className="animate-spin" />
+              ) : (
+                <IconLibraryPlus />
+              )}
+              Peças em lote
+            </Button>
+          </Link>
+        </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
@@ -21,7 +67,7 @@ export default function Home() {
             width={16}
             height={16}
           />
-          Learn
+          Histórico
         </a>
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
@@ -36,7 +82,7 @@ export default function Home() {
             width={16}
             height={16}
           />
-          Examples
+          Saiba mais
         </a>
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
@@ -51,7 +97,7 @@ export default function Home() {
             width={16}
             height={16}
           />
-          Go to nextjs.org →
+          GitHub →
         </a>
       </footer>
     </div>
