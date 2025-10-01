@@ -5,26 +5,23 @@ import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/theme-toggle";
 import { IconPlus, IconLibraryPlus } from "@tabler/icons-react";
 import { Loader2Icon } from "lucide-react";
-import PieceForm from "@/components/piece-form";
-import ResultCard from "@/components/result-card";
 import { useState } from "react";
 import Link from "next/link";
 
 export default function Home() {
   const isLoading = false;
 
-  const [result, setResult] = useState<{
-    price: string;
-    justification: string;
-  } | null>(null);
-
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+      <header className="flex justify-end w-full">
+        <ModeToggle />
+      </header>
       <main className="flex  flex-col gap-5 row-start-2 items-center sm:items-start">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Garimpo.AI</h1>
+          <h1 className="text-4xl font-bold mb-1">Garimpo.AI</h1>
+          <p className="text-sm text-gray-500 mb-4">by Loopz Brechó</p>
           <p className="text-gray-600 max-w-md">
-            Preços inteligentes para roupas de brechó. Escolha um modo abaixo
+            Preços inteligentes para peças únicas de brechó. Escolha um modo abaixo
             para começar.
           </p>
         </div>
