@@ -12,9 +12,9 @@ export default function StepNavigator({ onNext, onBack, disableBack }: Props) {
   return (
     <div className="flex justify-between">
       <Button variant="outline" onClick={onBack} disabled={disableBack}>
-        Back
+        Voltar
       </Button>
-      <Button onClick={onNext}>Next</Button>
+      <Button onClick={onNext}>Avançar</Button>
     </div>
   );
 }
