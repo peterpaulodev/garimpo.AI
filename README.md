@@ -91,15 +91,13 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou env
 
 ## ✉️ Contato
 
-Seu Nome - [@seu_twitter](https://twitter.com/seu_twitter)
+Peterson Almeida - [LinkedIn](https://www.linkedin.com/in/peterson-paulo-marques/)
 
-Link do Projeto: [https://github.com/seu-usuario/garimpo-ai](https://github.com/seu-usuario/garimpo-ai)
+Link do Projeto: [https://garimpo-ai.vercel.app/](https://garimpo-ai.vercel.app/)
 
 ---
 
-Desenvolvido com ❤️ por [Seu Nome](https://github.com/seu-usuario)
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Desenvolvido com ❤️ por [Peterson Almeida](https://github.com/peterpaulodev)
 
 ## Deploy on Vercel
 
