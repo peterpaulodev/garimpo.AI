@@ -5,6 +5,7 @@ import StepNavigator from "./step-navigator";
 import ResultCard from "./result-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Info } from "lucide-react";
 
 const steps = ["Type", "Brand", "Condition", "Material", "Trend"];
 
@@ -50,43 +51,103 @@ export default function UniqueForm() {
     switch (currentStep) {
       case 0:
         return (
-          <Input
-            placeholder="Ex: Oversized denim jacket"
-            value={formData.type}
-            onChange={(e) => handleChange("type", e.target.value)}
-          />
+          <>
+            <div className="space-y-2 mb-6">
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Detalhes da roupa
+              </h1>
+              <p className="text-muted-foreground flex items-center gap-2 text-sm">
+                <Info className="h-4 w-4 text-primary" />
+                Descreva o item com detalhes como modelo, tecido, cor e estilo
+              </p>
+            </div>
+            <Input
+              placeholder="Ex: Blazer de linho bege, Vestido midi floral, Calça jeans boyfriend"
+              value={formData.type}
+              onChange={(e) => handleChange("type", e.target.value)}
+              className="mt-4"
+            />
+          </>
         );
       case 1:
         return (
-          <Input
-            placeholder="Ex: Levi’s"
-            value={formData.brand}
-            onChange={(e) => handleChange("brand", e.target.value)}
-          />
+          <>
+            <div className="space-y-2 mb-6">
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Marca
+              </h1>
+              <p className="text-muted-foreground flex items-center gap-2 text-sm">
+                <Info className="h-4 w-4 text-primary" />
+                Informe a marca da peça para uma precificação mais precisa
+              </p>
+            </div>
+            <Input
+              placeholder="Ex: Levi's, Zara, Renner"
+              value={formData.brand}
+              onChange={(e) => handleChange("brand", e.target.value)}
+              className="mt-4"
+            />
+          </>
         );
       case 2:
         return (
-          <Input
-            placeholder="Ex: Used, good condition"
-            value={formData.condition}
-            onChange={(e) => handleChange("condition", e.target.value)}
-          />
+          <>
+            <div className="space-y-2 mb-6">
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Condição
+              </h1>
+              <p className="text-muted-foreground flex items-center gap-2 text-sm">
+                <Info className="h-4 w-4 text-primary" />
+                Informe a condição atual da peça (nova, seminova, usada, etc.)
+              </p>
+            </div>
+            <Input
+              placeholder="Ex: Usada, em bom estado"
+              value={formData.condition}
+              onChange={(e) => handleChange("condition", e.target.value)}
+              className="mt-4"
+            />
+          </>
         );
       case 3:
         return (
-          <Input
-            placeholder="Ex: 100% cotton"
-            value={formData.material}
-            onChange={(e) => handleChange("material", e.target.value)}
-          />
+          <>
+            <div className="space-y-2 mb-6">
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Material
+              </h1>
+              <p className="text-muted-foreground flex items-center gap-2 text-sm">
+                <Info className="h-4 w-4 text-primary" />
+                Informe a composição do material (ex: 100% algodão, viscose, etc.)
+              </p>
+            </div>
+            <Input
+              placeholder="Ex: 100% algodão, viscose com elastano"
+              value={formData.material}
+              onChange={(e) => handleChange("material", e.target.value)}
+              className="mt-4"
+            />
+          </>
         );
       case 4:
         return (
-          <Input
-            placeholder="Ex: Vintage, streetwear"
-            value={formData.trend}
-            onChange={(e) => handleChange("trend", e.target.value)}
-          />
+          <>
+            <div className="space-y-2 mb-6">
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Tendência
+              </h1>
+              <p className="text-muted-foreground flex items-center gap-2 text-sm">
+                <Info className="h-4 w-4 text-primary" />
+                Descreva o estilo ou tendência (ex: vintage, streetwear, clássico)
+              </p>
+            </div>
+            <Input
+              placeholder="Ex: Vintage anos 90, streetwear, clássico atemporal"
+              value={formData.trend}
+              onChange={(e) => handleChange("trend", e.target.value)}
+              className="mt-4"
+            />
+          </>
         );
       default:
         return null;
