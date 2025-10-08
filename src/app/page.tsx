@@ -16,7 +16,7 @@ export default function Home() {
       <header className="flex justify-end w-full">
         <ModeToggle />
       </header>
-      <main className="flex  flex-col gap-5 row-start-2 items-center sm:items-start">
+      <main className="flex flex-col gap-5 row-start-2 items-center sm:items-start">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-1">Garimpo.AI</h1>
           <p className="text-sm text-gray-500 mb-4">by Loopz Brechó</p>
